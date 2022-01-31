@@ -4,7 +4,7 @@ import './style.css';
 let reminder: number;
 
 const timeInputEl: HTMLElement = document.querySelector('.time-input-screen');
-const timelapseEl: HTMLElement = document.querySelector('.time-lapse-screen');
+const timeLapseEl: HTMLElement = document.querySelector('.time-lapse-screen');
 
 const input: HTMLInputElement = document.querySelector('.input-container input');
 const beginBtn: HTMLButtonElement = document.querySelector('.begin-btn');
@@ -57,5 +57,5 @@ function startTimeCounter() {
  */
 function transitionFromTimeInputToTimeLapseScreen() {
   timeInputEl.style.display = 'none';
-  timelapseEl.style.display = 'block';
+  timeLapseEl.style.display = 'block';
 }
