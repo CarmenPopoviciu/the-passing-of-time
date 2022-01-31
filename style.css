@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
+
+/* CSS vars */
+:root {
+  --light-blue: #6b8ea7c4;
+  --dark-blue: #0C152F;
+  --darker-blue: #08112b;
+  --light-gray: #d1d1d1;
+}
+
+/* generic */
+html, body {
+  height: 100%;
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--light-gray);
+  background: rgb(23,39,87);
+  background: radial-gradient(circle, rgba(23,39,87,1) 0%, rgba(12,21,47,1) 100%);
+}
+
+input {
+  background-color: var(--dark-blue);
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid var(--light-gray);
+  color: #d1d1d1;
+  font-size: 2em;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--light-blue);
+}
+
+button {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 0px;
+  font: 14px 'Montserrat', sans-serif;
+  color: var(--light-gray);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* main container */
+.sat-nam {
+  width: 55%;
+  text-align: center;
+}
+
+/* welcome section */
+.welcome-screen {
+  margin: 20px 10px;
+  animation: fade-out 3s 7s forwards;
+}
+
+.welcome-screen h2 {
+  font-size: 3.5em;
+  font-weight: 100;
+}
+
+.welcome-screen p {
+  font-size: 1.05em;
+  line-height: 1.3;
+}
+
+/* time input section */
+.time-input-screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  animation: fade-in 3s 9s forwards;
+}
+
+.input-container {
+  margin-bottom: 25px;
+}
+
+.input-container input {
+  width: 70px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.display-container {
+  height: 50px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.display-container button {
+  border: none;
+  outline: none;
+  font-weight: 800;
+}
+
+.begin-btn {
+  width: 200px;
+  padding: 10px;
+  background-color: var(--darker-blue);
+  border: none;
+  
+}
+
+/* time lapse section */
+.time-lapse-screen {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  stroke: var(--darker-blue);
+  stroke-width: 85px;
+  fill: transparent;
+  stroke-dashoffset: 3769.91; /* 2 * PI * Radius */
+  stroke-dasharray: 3769.91;
+  /* animation-name: circletimer;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; */
+}
+
+/* animations */
+@keyframes fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes circletimer {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
